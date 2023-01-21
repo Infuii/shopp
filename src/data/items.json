@@ -28,5 +28,11 @@
       "name": "Hat",
       "price": 599,
       "imgUrl": "https://avatars.githubusercontent.com/u/52092402?s=40&v=4"
+    },
+    {
+      "id": 6,
+      "name": "GitHub Mascot",
+      "price": 1179000,
+      "imgUrl": "https://github.githubassets.com/images/mona-loading-dark.gif"
     }
   ]
