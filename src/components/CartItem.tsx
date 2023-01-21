@@ -19,6 +19,8 @@ export function CartItem({ id, quantity }: CartItemProps) {
                 <div>
                     {item.name} {quantity > 1 &&(
                     <span className="text-muted" style={{fontSize: ".65rem"}}>{quantity}x</span>)}
+                    {quantity == 0 &&(
+                    <span className="text-muted" style={{fontSize: ".65rem"}}>REMOVED</span>)}
                 </div>
                 <div className="text-muted" style={{ fontSize: ".75rem"}}>{formatCurrency(item.price)}/unit</div>
             </div>
