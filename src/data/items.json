@@ -22,5 +22,11 @@
       "name": "Car",
       "price": 14000,
       "imgUrl": "/images/car.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Hat",
+      "price": 599,
+      "imgUrl": "https://avatars.githubusercontent.com/u/52092402?s=40&v=4"
     }
   ]
