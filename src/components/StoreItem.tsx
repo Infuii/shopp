@@ -1,5 +1,6 @@
 import { Button, Card } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 import { formatCurrency } from "../utilities/formatCurrency"
 
 type StoreItemProps = {
@@ -10,9 +11,9 @@ type StoreItemProps = {
 }
 
 export function StoreItem({ id, name, price, imgUrl }:StoreItemProps) {
-    const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useShoppingCart()
+    const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, removeAllFromCart } = useShoppingCart()
     const quantity = getItemQuantity(id)
-    return <Card className="h-100">
+    return (<Card className="h-100">
         <Card.Img variant="top" src={imgUrl} height="200px" style={{ objectFit: "cover" }}/>
         <Card.Body className="d-flex flex-column">
             <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
@@ -31,8 +32,9 @@ export function StoreItem({ id, name, price, imgUrl }:StoreItemProps) {
                     <Button onClick={() => increaseCartQuantity(id)} >+</Button>
                 </div>
                 <Button onClick={() => removeFromCart(id)} variant="danger" size="sm">REMOVE</Button>
+                <Button onClick={() => removeAllFromCart(id)} variant="danger" size="sm">REMOVE ALL</Button>
             </div>}
             </div>
         </Card.Body>
     </Card>
-}
+)}
